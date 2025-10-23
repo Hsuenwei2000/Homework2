@@ -298,4 +298,57 @@ int main() {
 | 乘法       | O(n × m)     | O(n + m)     | 雙重迴圈乘法          |
 | Evaluate | O(n)         | O(1)         | Horner’s Method |
 
-	![範例輸出入](https://lurl.cc/Pstzz)
+### 測試與驗證
+
+![範例輸出入](images/結果.png)
+
+### 申論及開發報告
+
+**(1)專案摘要 (Abstract)**
+
+本專案實作一個 多項式（Polynomial）類別，
+
+以物件導向的方式模擬數學上的多項式結構。
+
+透過封裝（Encapsulation）與運算子多載（Operator Overloading），
+
+使得多項式能以自然的語法進行輸入、輸出與運算。
+
+**實作重點如下：**
+
+根據題目提供之 Figure 1（ADT） 與 Figure 2（private data members） 設計類別。
+
+使用*動態記憶體配置*儲存係數陣列。
+
+重載 >> 與 << 以進行多項式的輸入與輸出。
+
+實作多項式加法、減法、乘法及求值（evaluate）。
+
+**系統設計與類別架構**
+
+
+|              Polynomial                |
+| -------------------------------------- |
+| - degree : int                         |
+| - coef : double*                       |
+| + Polynomial(int deg=0)                |
+| + Polynomial(const Polynomial&)        |
+| + ~Polynomial()                        |
+| + operator=(const Polynomial&)         |
+| + operator>>(istream&, Polynomial&)    |
+| + operator<<(ostream&, Polynomial&)    |
+| + operator+(const Polynomial&)         |
+| + operator-(const Polynomial&)         |
+| + operator*(const Polynomial&)         |
+| + evaluate(double x): double           |
+
+### 心得與反思 (Reflection)
+
+
+(1)抽象資料型態（ADT）**如何轉化為可執行的類別結構。
+
+(2)運算子多載（Operator Overloading）**讓物件行為自然化的重要性。
+
+(3)記憶體管理（Memory Management）**在類別設計中的關鍵性（尤其是動態陣列）。
+
+(4)使用 Horner’s Method 計算多項式時的效率提升。
